@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delicious Bites Restaurant</title>
+  <style>
+    /* Basic Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #d35400;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #d35400;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #d35400;
+      padding-bottom: 5px;
+    }
+
+    /* Menu styles */
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .menu-item h3 {
+      font-weight: normal;
+    }
+
+    .menu-item p {
+      font-style: italic;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #d35400;
+    }
+
+    /* Reservation form */
+    form {
+      background: #f9f4f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(211, 84, 0, 0.2);
+      max-width: 400px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      background: #d35400;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #e67e22;
+    }
+
+    /* Footer */
+    footer {
+      background: #d35400;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .price {
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Delicious Bites</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#reservation">Reservation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <div class="menu-item">
+        <div>
+          <h3>Margherita Pizza</h3>
+          <p>Classic pizza with fresh tomatoes, mozzarella, and basil.</p>
+        </div>
+        <div class="price">$12</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Spaghetti Carbonara</h3>
+          <p>Spaghetti with creamy sauce, pancetta, and parmesan cheese.</p>
+        </div>
+        <div class="price">$15</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Caesar Salad</h3>
+          <p>Crisp romaine lettuce with Caesar dressing and croutons.</p>
+        </div>
+        <div class="price">$10</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Chocolate Lava Cake</h3>
+          <p>Warm chocolate cake with a gooey center served with vanilla ice cream.</p>
+        </div>
+        <div class="price">$8</div>
+      </div>
+    </section>
+
+    <section id="reservation">
+      <h2>Make a Reservation</h2>
+      <form id="reservationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="time">Time:</label>
+        <select id="time" name="time" required>
+          <option value="">Select a time</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+          <option>9:00 PM</option>
+        </select>
+
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" min="1" max="20" required />
+
+        <button type="submit">Reserve</button>
+      </form>
+      <p id="confirmation" style="color: green; margin-top: 10px;"></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Address: 123 Foodie Lane, Flavor Town</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Email: contact@deliciousbites.com</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Delicious Bites Restaurant. All rights reserved.
+  </footer>
+
+  <script>
+    // Simple reservation form handler
+    const form = document.getElementById('reservationForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const date = form.date.value;
+      const time = form.time.value;
+      const guests = form.guests.value;
+
+      if (!name || !email || !date || !time || !guests) {
+        confirmation.style.color = 'red';
+        confirmation.textContent = 'Please fill in all fields.';
+        return;
+      }
+
+      // Simple confirmation message
+      confirmation.style.color = 'green';
+      confirmation.textContent = `Thank you, ${name}! Your reservation for ${guests} guest(s) on ${date} at ${time} has been received.`;
+
+      // Reset form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
