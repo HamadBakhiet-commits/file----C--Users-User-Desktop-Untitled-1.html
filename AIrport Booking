@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAamad Airport Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book a Ticket at HAamad Airport</h2>
+        <form id="bookingForm">
+            <label for="passengerName">Passenger Name:</label>
+            <input type="text" id="passengerName" name="passengerName" required>
+
+            <label for="flightDate">Flight Date:</label>
+            <input type="date" id="flightDate" name="flightDate" required>
+
+            <label for="numTickets">Number of Tickets:</label>
+            <input type="number" id="numTickets" name="numTickets" min="1" required>
+
+            <input type="submit" value="Book Ticket">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const passengerName = document.getElementById('passengerName').value;
+            const flightDate = document.getElementById('flightDate').value;
+            const numTickets = document.getElementById('numTickets').value;
+
+            const bookingDetails = `Booking Details:\nPassenger Name: ${passengerName}\nFlight Date: ${flightDate}\nNumber of Tickets: ${numTickets}`;
+            alert(bookingDetails);
+
+            // Here you could add code to send the booking details to a server or process them further
+        });
+    </script>
+</body>
+</html>
